@@ -1,0 +1,17 @@
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\db50.mdb
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationsBlocks.Data.Tests.dll
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationsBlocks.Data.Tests.pdb
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationsBlocks.Data.Tests.xml
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationBlocks.Data.dll
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\nunit.framework.dll
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\nunit.framework.xml
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationBlocks.Data.pdb
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationBlocks.Data.xml
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.Resources.resources
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.vbproj.GenerateResource.Cache
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.dll
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.xml
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.pdb
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.vbprojAssemblyReference.cache
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.vbproj.CoreCompileInputs.cache
+P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\obj\Debug\ApplicationsBlocks.Data.Tests.vbproj.CopyComplete

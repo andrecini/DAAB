@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
+  <TopNode>[0-1042]P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationsBlocks.Data.Tests.dll</TopNode>
+  <SelectedNode>[0-1029]ApplicationsBlocks.Data.Tests.OleDBHelperTests.DbHelperTests.ExecuteDatasetNoParameters</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1042]P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationsBlocks.Data.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1043]ApplicationsBlocks" Expanded="true" />
+    <Node UniqueName="[0-1044]ApplicationsBlocks.Data" Expanded="true" />
+    <Node UniqueName="[0-1045]ApplicationsBlocks.Data.Tests" Expanded="true" />
+    <Node UniqueName="[0-1028]ApplicationsBlocks.Data.Tests.OleDBHelperTests" Expanded="true" />
+    <Node UniqueName="[0-1029]ApplicationsBlocks.Data.Tests.OleDBHelperTests.DbHelperTests.ExecuteDatasetNoParameters" Checked="true" />
+  </Nodes>
+</VisualState>

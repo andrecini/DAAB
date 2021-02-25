@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="7E998B39-8D74-4E82-9610-58B1E5AC67B7" ModuleId="ApplicationsBlocks.Data.Tests" />
+  <Module PersistentId="0ED3D747-FA56-4481-8A26-4A0E39BA7D03" ModuleId="ApplicationBlocks.Data" />
+</Modules>

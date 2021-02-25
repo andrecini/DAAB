@@ -1,0 +1,12 @@
+P:\ISOCS\DataAccessQuickStartSamples.exe
+P:\ISOCS\DataAccessQuickStartSamples.pdb
+P:\ISOCS\DataAccessQuickStartSamples.xml
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.FormDbHelper.resources
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.vbproj.GenerateResource.Cache
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.exe
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.xml
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.pdb
+P:\ISOCS\DataAccessQuickStartSamples.exe.config
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.vbprojAssemblyReference.cache
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.vbproj.CoreCompileInputs.cache
+P:\vnetprojects2008\datalayer1.1\Sample\obj\Debug\DataAccessQuickStartSamples.vbproj.CopyComplete

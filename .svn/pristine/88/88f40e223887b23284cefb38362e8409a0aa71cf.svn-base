@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Data Access Application Block (VB)">
+</Property><Property Name="Solution File" Value="P:\vnetprojects2008\datalayer\Data Access Application Block (VB).sln">
+</Property><Property Name="Date" Value="sexta-feira, 15 de janeiro de 2010">
+</Property><Property Name="Time" Value="10:12">
+</Property></Properties><Event ErrorLevel="0" Project="ApplicationBlocks.Data" Source="ApplicationBlocks.Data\ApplicationBlocks.Data.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ApplicationBlocks.Data" Source="ApplicationBlocks.Data\ApplicationBlocks.Data.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Data Access Application Block (VB).sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Data Access Application Block (VB).sln" Description="Converted">
+</Event><Event ErrorLevel="3" Project="ApplicationBlocks.Data" Source="ApplicationBlocks.Data\SqlDbHelper.vb" Description="Converted">
+</Event></UpgradeLog>

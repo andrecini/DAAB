@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ApplicationBlocks.Data
+</name>
+</assembly>
+<members>
+<member name="T:ApplicationBlocks.Data.ConnectionWithExtraInfo">
+ <summary>
+ Decorator for the connection class, exposing additional info like it's transaction.
+ </summary>
+</member>
+<member name="M:ApplicationBlocks.Data.DbHelper.GetDbType(System.Type)">
+ alternative code  http://www.codeproject.com/KB/vb/ConvToSqlDbType.aspx
+</member>
+</members>
+</doc>

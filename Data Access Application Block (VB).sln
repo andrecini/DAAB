@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ApplicationBlocks.Data", "ApplicationBlocks.Data\ApplicationBlocks.Data.vbproj", "{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugTests|Any CPU = DebugTests|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseWithDebugInfo|Any CPU = ReleaseWithDebugInfo|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}.DebugTests|Any CPU.ActiveCfg = DebugTests|Any CPU
+		{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}.DebugTests|Any CPU.Build.0 = DebugTests|Any CPU
+		{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}.ReleaseWithDebugInfo|Any CPU.ActiveCfg = ReleaseWithDebugInfo|Any CPU
+		{0ED3D747-FA56-4481-8A26-4A0E39BA7D03}.ReleaseWithDebugInfo|Any CPU.Build.0 = ReleaseWithDebugInfo|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

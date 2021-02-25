@@ -1,0 +1,4 @@
+P:\vnetprojects2008\datalayer1.1\ApplicationBlocks.Data\bin\ApplicationBlocks.Data.dll
+P:\vnetprojects2008\datalayer1.1\ApplicationBlocks.Data\bin\ApplicationBlocks.Data.xml
+P:\vnetprojects2008\datalayer1.1\ApplicationBlocks.Data\obj\Release\ApplicationBlocks.Data.dll
+P:\vnetprojects2008\datalayer1.1\ApplicationBlocks.Data\obj\Release\ApplicationBlocks.Data.xml

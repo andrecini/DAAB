@@ -1,0 +1,325 @@
+﻿Imports NUnit.Framework
+Imports System.Runtime.Remoting
+Imports System.Runtime.Remoting.Channels
+Imports System.Diagnostics
+Imports ApplicationBlocks.Data
+
+'<TestFixture(), Explicit(), Category("Teste")> _
+
+Public MustInherit Class DbHelperTests
+
+    Protected m_dbHelper As IDBHelper
+    Protected m_dbConn As IDbConnection
+
+#Region "Execute Dataset"
+
+    <Test()> _
+    Public Sub ExecuteDatasetNoParameters()
+
+        Dim sql = "SELECT * FROM tags1 t"
+
+        Dim ds = m_dbHelper.ExecuteDataset(m_dbConn, CommandType.Text, sql)
+
+        Assert.That(ds.Tables(0).Rows.Count, [Is].GreaterThan(0))
+
+    End Sub
+
+
+    <Test()> _
+   Public Sub ExecuteDatasetWithParameters()
+
+        Dim sql = "SELECT t.tag_tag_id_pk, t.tag_tag FROM tags AS t WHERE(t.tag_tag = @tag_tag)"
+
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        Dim ds = m_dbHelper.ExecuteDataset(m_dbConn, CommandType.Text, sql, param1)
+
+        Assert.That(ds.Tables(0).Rows.Count, [Is].EqualTo(1))
+
+    End Sub
+
+
+    <Test()> _
+    Public Sub ExecuteDatasetNoParametersTransaction()
+
+        Dim trans = m_dbConn.BeginTransaction()
+
+        Dim sql = "SELECT * FROM tags t"
+
+        Dim ds = m_dbHelper.ExecuteDataset(trans, CommandType.Text, sql)
+
+        trans.Commit()
+
+        Assert.That(ds.Tables(0).Rows.Count, [Is].GreaterThan(0))
+
+    End Sub
+
+
+    <Test()> _
+   Public Sub ExecuteDatasetWithParametersTransaction()
+
+        Dim trans = m_dbConn.BeginTransaction()
+        Dim sql = "SELECT t.tag_tag_id_pk, t.tag_tag FROM tags AS t WHERE(t.tag_tag = @tag_tag)"
+
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        Dim ds = m_dbHelper.ExecuteDataset(trans, CommandType.Text, sql, param1)
+
+        trans.Commit()
+
+        Assert.That(ds.Tables(0).Rows.Count, [Is].EqualTo(1))
+
+    End Sub
+
+
+    <Test()> _
+   Public Sub ExecuteDatasetWithParametersTransactionImplicit()
+
+        Dim trans = m_dbConn.BeginTransaction()
+
+        Dim sql = "SELECT t.tag_tag_id_pk, t.tag_tag FROM tags AS t WHERE(t.tag_tag = @tag_tag)"
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        Dim ds = m_dbHelper.ExecuteDataset(m_dbConn, CommandType.Text, sql, param1)
+
+        trans.Commit()
+
+        Assert.That(ds.Tables(0).Rows.Count, [Is].EqualTo(1))
+
+    End Sub
+
+
+
+    <Test()> _
+   Public Sub ExecuteDatasetWithParametersTransactionNested()
+
+        Dim trans1 = m_dbConn.BeginTransaction()
+
+        Dim sql = "SELECT t.tag_tag_id_pk, t.tag_tag FROM tags AS t WHERE(t.tag_tag = @tag_tag)"
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        Dim ds = m_dbHelper.ExecuteDataset(trans1, CommandType.Text, sql, param1)
+
+        Dim trans2 = m_dbConn.BeginTransaction()
+
+        param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        ds = m_dbHelper.ExecuteDataset(trans2, CommandType.Text, sql, param1)
+
+        trans2.Commit()
+
+        trans1.Commit()
+
+        Assert.That(ds.Tables(0).Rows.Count, [Is].EqualTo(1))
+
+    End Sub
+
+#End Region
+
+#Region "ExecuteNonQuery"
+
+    <Test()> _
+       Public Sub ExecuteNonQueryNoParameters()
+
+        Dim sql = "UPDATE tags SET tag_tag = tag_tag"
+
+        Dim affected = m_dbHelper.ExecuteNonQuery(m_dbConn, CommandType.Text, sql)
+
+        Assert.That(affected, [Is].GreaterThan(0))
+
+    End Sub
+
+
+    <Test()> _
+       Public Sub ExecuteNonQueryWithParameters()
+
+        Dim sql = "UPDATE tags SET tag_tag = tag_tag WHERE tag_tag=@tag_tag"
+
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        Dim params = New IDataParameter() {param1}
+
+        Dim affected = m_dbHelper.ExecuteNonQuery(m_dbConn, CommandType.Text, sql, params)
+        Assert.That(affected, [Is].EqualTo(1))
+
+        param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        affected = m_dbHelper.ExecuteNonQuery(m_dbConn, CommandType.Text, sql, param1)
+        Assert.That(affected, [Is].EqualTo(1))
+
+    End Sub
+
+
+    <Test()> _
+      Public Sub ExecuteNonQueryWithParametersTransaction()
+
+        Dim trans1 = m_dbConn.BeginTransaction()
+
+        Dim sql = "UPDATE tags SET tag_tag = [tag_tag] WHERE tag_tag=@tag_tag"
+
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        Dim params = New IDataParameter() {param1}
+
+        Dim affected = m_dbHelper.ExecuteNonQuery(trans1, CommandType.Text, sql, params)
+        Assert.That(affected, [Is].EqualTo(1))
+
+        trans1.Commit()
+
+    End Sub
+
+
+    <Test()> _
+      Public Sub ExecuteNonQueryWithParametersTransactionImplicit()
+
+        Dim trans1 = m_dbConn.BeginTransaction()
+
+        Dim sql = "UPDATE tags SET tag_tag = tag_tag WHERE tag_tag=@tag_tag"
+
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        Dim params = New IDataParameter() {param1}
+
+        Dim affected = m_dbHelper.ExecuteNonQuery(m_dbConn, CommandType.Text, sql, params)
+        Assert.That(affected, [Is].EqualTo(1))
+
+
+        Dim trans2 = m_dbConn.BeginTransaction()
+
+        param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        params = New IDataParameter() {param1}
+
+        affected = m_dbHelper.ExecuteNonQuery(m_dbConn, CommandType.Text, sql, params)
+        Assert.That(affected, [Is].EqualTo(1))
+
+        trans2.Commit()
+
+
+        trans1.Commit()
+
+    End Sub
+
+
+#End Region
+
+
+#Region "ExecuteScalar"
+
+    <Test()> _
+  Public Sub ExecuteScalarWithParametersTransactionNestedImplicit()
+
+        Dim trans1 = m_dbConn.BeginTransaction()
+
+        Dim sql = "SELECT t.tag_tag_id_pk, t.tag_tag FROM tags AS t WHERE(t.tag_tag = @tag_tag)"
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+
+        Dim scalarValue = m_dbHelper.ExecuteScalar(m_dbConn, CommandType.Text, sql, param1)
+        Assert.That(scalarValue, [Is].GreaterThan(0))
+
+        Dim trans2 = m_dbConn.BeginTransaction()
+
+        param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        scalarValue = m_dbHelper.ExecuteScalar(m_dbConn, CommandType.Text, sql, param1)
+        Assert.That(scalarValue, [Is].GreaterThan(0))
+
+        trans2.Commit()
+
+        trans1.Commit()
+
+
+
+    End Sub
+
+
+#End Region
+
+
+
+#Region "ExecuteReader"
+
+
+
+
+    <Test()> _
+   Public Sub ExecuteReaderWithParametersTransactionNested()
+
+        Dim trans1 = m_dbConn.BeginTransaction()
+
+        Dim sql = "SELECT t.tag_tag_id_pk, t.tag_tag FROM tags AS t WHERE(t.tag_tag = @tag_tag)"
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        Dim reader = m_dbHelper.ExecuteReader(trans1, CommandType.Text, sql, param1)
+        AssertReaderHasValues(reader)
+
+        Dim trans2 = m_dbConn.BeginTransaction()
+
+        param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        reader = m_dbHelper.ExecuteReader(m_dbConn, CommandType.Text, sql, param1)
+        AssertReaderHasValues(reader)
+
+        trans2.Commit()
+
+        trans1.Commit()
+
+    End Sub
+
+    Private Sub AssertReaderHasValues(ByVal reader As IDataReader)
+
+        ' Always call Read before accessing data. 
+        While reader.Read()
+            Dim valueRead = reader.Item("tag_tag_id_pk")
+            Assert.That(valueRead, [Is].GreaterThan(0))
+        End While
+
+        ' Always call Close when done reading.
+        reader.Close()
+    End Sub
+
+#End Region
+
+
+
+#Region "Update Dataset"
+
+    <Test()> _
+ Public Sub UpdateDatasetDatasetWithParametersTransactionNested()
+
+        Dim trans1 = m_dbConn.BeginTransaction()
+
+        Dim sqlSelect = "SELECT t.tag_tag_id_pk, t.tag_tag FROM tags t"
+        Dim sql = sqlSelect & " WHERE(t.tag_tag = @tag_tag)"
+        Dim param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        Dim ds = m_dbHelper.ExecuteDataset(trans1, CommandType.Text, sql, param1)
+
+
+        ds.Tables(0).Rows(0)("tag_tag") = ds.Tables(0).Rows(0)("tag_tag")
+
+        Dim affected = m_dbHelper.UpdateDataset(trans1, sqlSelect, ds.Tables(0))
+        Assert.That(affected, [Is].EqualTo(1))
+
+        Dim trans2 = m_dbConn.BeginTransaction()
+
+        param1 = m_dbHelper.NewParameter("@tag_tag", DbType.String, CObj("TI-0001"))
+        ds = m_dbHelper.ExecuteDataset(m_dbConn, CommandType.Text, sql, param1)
+
+        ds.Tables(0).Rows(0)("tag_tag") = ds.Tables(0).Rows(0)("tag_tag")
+
+        affected = m_dbHelper.UpdateDataset(m_dbConn, sqlSelect, ds.Tables(0))
+        Assert.That(affected, [Is].EqualTo(1))
+
+
+        trans2.Commit()
+
+        trans1.Commit()
+
+    End Sub
+
+
+
+#End Region
+
+
+
+    Protected Function CurrentPath() As String
+
+        Return AppDomain.CurrentDomain.BaseDirectory()
+    End Function
+
+End Class

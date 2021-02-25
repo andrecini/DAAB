@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationsBlocks.Data.Tests.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2021-02-25" time="10:55:25">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.9151" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug" machine-name="VS2017" user="admin" user-domain="VS2017" />
+  <culture-info current-culture="pt-BR" current-uiculture="pt-BR" />
+  <test-suite type="Assembly" name="P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\bin\Debug\ApplicationsBlocks.Data.Tests.dll" executed="True" result="Failure" success="False" time="1.418" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="ApplicationsBlocks" executed="True" result="Failure" success="False" time="1.401" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Data" executed="True" result="Failure" success="False" time="1.400" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="1.399" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="OleDBHelperTests" executed="True" result="Failure" success="False" time="1.397" asserts="0">
+                    <categories>
+                      <category name="OLEDB" />
+                    </categories>
+                    <results>
+                      <test-case name="ApplicationsBlocks.Data.Tests.OleDBHelperTests.DbHelperTests.ExecuteDatasetNoParameters" executed="True" result="Error" success="False" time="0.251" asserts="0">
+                        <failure>
+                          <message><![CDATA[System.ApplicationException : O mecanismo de banco de dados Microsoft Jet não encontrou a tabela de entrada ou consulta 'tags1'. Certifique-se de que ela existe e de que seu nome está digitado corretamente. SQL:SELECT * FROM tags1 t
+  ----> System.Data.OleDb.OleDbException : O mecanismo de banco de dados Microsoft Jet não encontrou a tabela de entrada ou consulta 'tags1'. Certifique-se de que ela existe e de que seu nome está digitado corretamente.]]></message>
+                          <stack-trace><![CDATA[em ApplicationBlocks.Data.DbHelper.ExecuteDataset(IDbConnection connection, CommandType commandType, String commandText, IDataParameter[] commandParameters) na P:\vnetprojects2008\datalayer1.1\ApplicationBlocks.Data\DbHelper.vb:linha 388
+em ApplicationBlocks.Data.DbHelper.ExecuteDataset(IDbConnection connection, CommandType commandType, String commandText) na P:\vnetprojects2008\datalayer1.1\ApplicationBlocks.Data\DbHelper.vb:linha 347
+em ApplicationsBlocks.Data.Tests.DbHelperTests.ExecuteDatasetNoParameters() na P:\vnetprojects2008\datalayer1.1\ApplicationsBlocks.Data.Tests\DbHelperTests.vb:linha 21
+--OleDbException
+em System.Data.OleDb.OleDbCommand.ExecuteCommandTextErrorHandling(OleDbHResult hr)
+em System.Data.OleDb.OleDbCommand.ExecuteCommandTextForSingleResult(tagDBPARAMS dbParams, Object& executeResult)
+em System.Data.OleDb.OleDbCommand.ExecuteCommandText(Object& executeResult)
+em System.Data.OleDb.OleDbCommand.ExecuteCommand(CommandBehavior behavior, Object& executeResult)
+em System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+em System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+em System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+em ApplicationBlocks.Data.DbHelper.ExecuteDataset(IDbConnection connection, CommandType commandType, String commandText, IDataParameter[] commandParameters) na P:\vnetprojects2008\datalayer1.1\ApplicationBlocks.Data\DbHelper.vb:linha 374
+]]></stack-trace>
+                        </failure>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
